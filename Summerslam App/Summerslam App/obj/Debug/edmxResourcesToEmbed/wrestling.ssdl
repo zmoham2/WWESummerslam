@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="wrastlingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Humans">
+    <Key>
+      <PropertyRef Name="HID" />
+    </Key>
+    <Property Name="HID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Men">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Picks">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HID" Type="int" Nullable="false" />
+    <Property Name="Universal" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Heavyweight" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="RWomen" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="SDWomen" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="RawTag" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="SDTag" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="IC" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="US" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="CW" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="DBMiz" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="MITB" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="BalCorbin" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="AlmasRusev" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="LashElias" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="BossSquad" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Women">
+    <Key>
+      <PropertyRef Name="WID" />
+    </Key>
+    <Property Name="WID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Picks__HID__5D80D6A1">
+    <End Role="Humans" Type="Self.Humans" Multiplicity="1" />
+    <End Role="Picks" Type="Self.Picks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Humans">
+        <PropertyRef Name="HID" />
+      </Principal>
+      <Dependent Role="Picks">
+        <PropertyRef Name="HID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="wrastlingModelStoreContainer">
+    <EntitySet Name="Humans" EntityType="Self.Humans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Men" EntityType="Self.Men" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Picks" EntityType="Self.Picks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Women" EntityType="Self.Women" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Picks__HID__5D80D6A1" Association="Self.FK__Picks__HID__5D80D6A1">
+      <End Role="Humans" EntitySet="Humans" />
+      <End Role="Picks" EntitySet="Picks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

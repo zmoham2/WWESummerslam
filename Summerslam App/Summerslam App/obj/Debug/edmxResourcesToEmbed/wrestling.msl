@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="wrastlingModelStoreContainer" CdmEntityContainer="wrastlingEntities">
+    <EntitySetMapping Name="Humans">
+      <EntityTypeMapping TypeName="wrastlingModel.Human">
+        <MappingFragment StoreEntitySet="Humans">
+          <ScalarProperty Name="HID" ColumnName="HID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Men">
+      <EntityTypeMapping TypeName="wrastlingModel.Man">
+        <MappingFragment StoreEntitySet="Men">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Picks">
+      <EntityTypeMapping TypeName="wrastlingModel.Pick">
+        <MappingFragment StoreEntitySet="Picks">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="HID" ColumnName="HID" />
+          <ScalarProperty Name="Universal" ColumnName="Universal" />
+          <ScalarProperty Name="Heavyweight" ColumnName="Heavyweight" />
+          <ScalarProperty Name="RWomen" ColumnName="RWomen" />
+          <ScalarProperty Name="SDWomen" ColumnName="SDWomen" />
+          <ScalarProperty Name="RawTag" ColumnName="RawTag" />
+          <ScalarProperty Name="SDTag" ColumnName="SDTag" />
+          <ScalarProperty Name="IC" ColumnName="IC" />
+          <ScalarProperty Name="US" ColumnName="US" />
+          <ScalarProperty Name="CW" ColumnName="CW" />
+          <ScalarProperty Name="DBMiz" ColumnName="DBMiz" />
+          <ScalarProperty Name="MITB" ColumnName="MITB" />
+          <ScalarProperty Name="BalCorbin" ColumnName="BalCorbin" />
+          <ScalarProperty Name="AlmasRusev" ColumnName="AlmasRusev" />
+          <ScalarProperty Name="LashElias" ColumnName="LashElias" />
+          <ScalarProperty Name="BossSquad" ColumnName="BossSquad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Women">
+      <EntityTypeMapping TypeName="wrastlingModel.Woman">
+        <MappingFragment StoreEntitySet="Women">
+          <ScalarProperty Name="WID" ColumnName="WID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
